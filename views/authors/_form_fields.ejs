@@ -1,6 +1,16 @@
-<label for="">Name</label>
-<input type="text" name="name" value="<%= author.name %>">
-<label for="">Birth Day</label>
-<input type="date" name="bday" value="<%= author.bday %>">
-<label for="">Bio</label>
-<textarea name="bio" value="<%= author.bio %>"></textarea>
+<div>
+    <label for="">Name</label>
+    <input type="text" name="name" value="<%= author.name %>">
+</div>
+<div>
+    <label for="">Birth Day</label>
+    <input type="date" name="bday" value="<%= author.bday %>">
+</div>
+<div>
+    <label>Author Picture</label>
+    <input type="file" name="authorImg" class="filepond">
+</div>
+<div>
+    <label for="">Bio</label>
+    <textarea name="bio" value="<%= author.bio %>"></textarea>
+</div>

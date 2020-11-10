@@ -1,4 +1,28 @@
+// const mongoose = require("mongoose");
+
+// const authorSchema = new mongoose.Schema({
+//   name: {
+//     type: String,
+//     required: true,
+//   },
+//   bio: {
+//     type: String,
+//     required: true,
+//   },
+//   bday: {
+//     type: Date,
+//     required: true,
+//   },
+//   authorImg: {
+//     type: String,
+//     required: true,
+//   },
+// });
+
+// module.exports = mongoose.model("author", authorSchema);
+
 const mongoose = require("mongoose");
+const Book = require("./book");
 
 const authorSchema = new mongoose.Schema({
   name: {
@@ -7,12 +31,35 @@ const authorSchema = new mongoose.Schema({
   },
   bio: {
     type: String,
+  },
+  authorImage: {
+    type: Buffer,
     required: true,
   },
-  bday: {
-    type: Date,
+  authorImageType: {
+    type: String,
     required: true,
   },
 });
 
-module.exports = mongoose.model("author", authorSchema);
+authorSchema.pre("remove", function (next) {
+  Book.find({ author: this.id }, (err, books) => {
+    if (err) {
+      next(err);
+    } else if (books.length > 0) {
+      next(new Error("This author has no books"));
+    } else {
+      next();
+    }
+  });
+});
+
+authorSchema.virtual("authorImagePath").get(function () {
+  if (this.authorImage != null && this.authorImageType != null) {
+    return `data:${
+      this.authorImageType
+    };charset=utf-8;base64,${this.authorImage.toString("base64")}`;
+  }
+});
+
+module.exports = mongoose.model("Author", authorSchema);
