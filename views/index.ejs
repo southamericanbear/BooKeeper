@@ -1,2 +1,19 @@
 <h2 class="page-header">Recently Added</h2>
-<%- include('partials/bookGrid', { books: books, large: true }) %>
+
+<% bookCoverClass = locals.large ? 'book-cover-large' : '' %>
+<% bookGridClass = locals.large ? 'book-grid-large' : '' %>
+<div class="book-grid <%= bookGridClass %>">
+    <% books.forEach(book => { %>
+
+    <div class="cover-author">
+
+        <a href="/books/<%= book.id %>">
+            <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
+            <div class="title-author">
+                <span class="book-name book-name-index"><%= book.title %> </span>
+                <a href="/authors/<%= book.author.id %> " class="author-name"><%= book.author.name %> </a>
+            </div>
+        </a>
+    </div>
+    <% }) %>
+</div>

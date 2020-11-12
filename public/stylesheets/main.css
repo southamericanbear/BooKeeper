@@ -37,3 +37,38 @@ body {
 .error-message {
   color: red;
 }
+
+.cover-author,
+.title-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover-author span {
+  font-size: 1.2rem;
+}
+
+.cover-author a {
+  text-decoration: none;
+  color: black;
+}
+
+.cover-author a:hover {
+  color: orange;
+}
+
+.title-author a {
+  margin-top: 5px;
+}
+
+.book-name-index {
+  font-size: 1.5rem !important;
+  font-weight: 600;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 300;
+}

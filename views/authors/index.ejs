@@ -13,7 +13,7 @@
 <div class="author-container">
     <% authors.forEach(author => { %>
     <div class="author">
-        <img width="100" height="150" src="<%= author.authorImagePath %> " alt="">
+        <img src="<%= author.authorImagePath %> " alt="">
         <div style="font-size: 1.5rem; margin: 10px auto;"><%= author.name %> </div>
         <div class="btn-row">
             <a class="btn btn-primary" href="/authors/<%= author.id %> ">View</a>
