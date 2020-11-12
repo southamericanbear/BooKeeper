@@ -1,9 +1,31 @@
 <h2 class="page-header"><%= author.name %></h2>
-<div class="btn-row">
-    <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
-    <%- include('../partials/deleteForm',
-              { url: `/authors/${author.id}` }) %>
+
+
+<div class="book-details author-details" style="margin-bottom: 35px;">
+    <div class="author-container">
+        <img width="250" height="350" src="<%= author.authorImagePath %>" alt="">
+
+        <div class="btn-row">
+            <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
+            <%- include('../partials/deleteForm',
+                  { url: `/authors/${author.id}` }) %>
+        </div>
+    </div>
+
+
+
+    <div class="book-details-grid author-details-grid">
+        <div class="bio">
+            <div class="book-details-label">Bio:
+            </div>
+            <div><%= author.bio %></div>
+        </div>
+
+
+    </div>
 </div>
+
+
 <% if (booksByAuthor.length > 0) { %>
 <h2 class="page-header">Books By Author</h2>
 <%- include('../partials/bookGrid', { books: booksByAuthor }) %>
