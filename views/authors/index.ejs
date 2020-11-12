@@ -10,16 +10,20 @@
         <button class="btn btn-primary" type="submit">Search</button>
     </div>
 </form>
-<div class="author-container">
+<div class="book-grid  <%= bookGridClass %>">
     <% authors.forEach(author => { %>
-    <div class="author">
-        <img src="<%= author.authorImagePath %> " alt="">
-        <div style="font-size: 1.5rem; margin: 10px auto;"><%= author.name %> </div>
-        <div class="btn-row">
-            <a class="btn btn-primary" href="/authors/<%= author.id %> ">View</a>
+
+    <div class="author-container">
+        <div class="author">
+            <img class="search-author-img" src="<%= author.authorImagePath %> " alt="">
+            <div class="name-and-view">
+                <div style="font-size: 1.5rem; margin: 10px auto;"><%= author.name %> </div>
+                <div class="btn-row">
+                    <a class="btn btn-primary" href="/authors/<%= author.id %> ">View</a>
+                </div>
+            </div>
 
         </div>
-
     </div>
     <% }) %>
 

@@ -1,11 +1,11 @@
-<h2 class="page-header"><%= author.name %></h2>
+<h2 class="page-header" style="text-align: center;"><%= author.name %></h2>
 
 
 <div class="book-details author-details" style="margin-bottom: 35px;">
     <div class="author-container">
         <img width="250" height="350" src="<%= author.authorImagePath %>" alt="">
 
-        <div class="btn-row">
+        <div class="btn-row btn-row-author">
             <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
             <%- include('../partials/deleteForm',
                   { url: `/authors/${author.id}` }) %>
