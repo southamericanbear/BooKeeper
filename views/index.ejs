@@ -11,7 +11,8 @@
             <img class="book-cover <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
             <div class="title-author">
                 <span class="book-name book-name-index"><%= book.title %> </span>
-                <a href="/authors/<%= book.author.id %> " class="author-name"><%= book.author.name %> </a>
+                <a style="font-family: var(--lato); font-size: 1.2rem; font-weight: 500;"
+                    href="/authors/<%= book.author.id %> " class="author-name"><%= book.author.name %> </a>
             </div>
         </a>
     </div>

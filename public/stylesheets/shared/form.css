@@ -37,11 +37,13 @@
   font-size: 1rem;
   font-weight: normal;
   outline: none;
+  font-family: var(--lato);
 }
 
 .form-item textarea {
   height: 100%;
   resize: none;
+  font-family: var(--lato);
 }
 
 .filepond--root {
