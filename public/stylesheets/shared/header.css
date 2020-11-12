@@ -6,6 +6,7 @@
 }
 
 .header-nav {
+  background: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -52,4 +53,9 @@
 
 button:focus {
   outline: none;
+}
+
+#navbarNavDropdown ul li {
+  font-size: 1.3rem;
+  margin: 5px auto;
 }

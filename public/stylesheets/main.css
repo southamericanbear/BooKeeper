@@ -15,6 +15,7 @@
 }
 
 body {
+  background: url(background\ of\ books.svg);
   font-family: var(--roboto-slab-font);
 }
 
