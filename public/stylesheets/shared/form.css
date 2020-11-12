@@ -52,3 +52,12 @@
 .form-row-end {
   justify-content: flex-end;
 }
+
+@media (max-width: 553px) {
+  .form-item {
+    margin-left: 0;
+  }
+  .form-item:first-child {
+    margin-left: none;
+  }
+}

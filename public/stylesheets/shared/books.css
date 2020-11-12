@@ -46,6 +46,7 @@
 
 .book-details-btn-grid {
   display: grid;
+  justify-content: center;
   justify-items: flex-start;
   align-items: flex-start;
   align-content: flex-start;
